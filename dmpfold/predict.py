@@ -189,7 +189,7 @@ def run_dmpfold():
     rnamedict = {
         0:'ALA', 1:'ARG', 2:'ASN', 3:'ASP', 4:'CYS', 5:'GLN', 6:'GLU', 7:'GLY', 8:'HIS',
         9:'ILE', 10:'LEU', 11:'LYS', 12:'MET', 13:'PHE', 14:'PRO', 15:'SER', 16:'THR', 17:'TRP',
-        18:'TYR', 19:'VAL'
+        18:'TYR', 19:'VAL', 20: 'UNK'
     }
 
     print("REMARK  CONF: ", confs.mean().item())
