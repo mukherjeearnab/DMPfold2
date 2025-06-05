@@ -12,6 +12,7 @@ import argparse
 
 from math import sqrt, log, asin, cos, pi, sin
 from urllib import request
+from collections import defaultdict
 
 import numpy as np
 
@@ -186,11 +187,12 @@ def run_dmpfold():
                                           minsteps=args.minsteps, weights_file=args.model_weights,
                                           return_alnmat=True)
 
-    rnamedict = {
+    residues = {
         0:'ALA', 1:'ARG', 2:'ASN', 3:'ASP', 4:'CYS', 5:'GLN', 6:'GLU', 7:'GLY', 8:'HIS',
         9:'ILE', 10:'LEU', 11:'LYS', 12:'MET', 13:'PHE', 14:'PRO', 15:'SER', 16:'THR', 17:'TRP',
-        18:'TYR', 19:'VAL', 20: 'UNK'
+        18:'TYR', 19:'VAL'
     }
+    rnamedict = defaultdict(lambda: 'UNK', residues)
 
     print("REMARK  CONF: ", confs.mean().item())
     atoms = (" N  ", " CA ", " C  ", " O  ", " CB ")
